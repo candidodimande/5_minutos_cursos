@@ -3,30 +3,40 @@ class MobileNavbar {
         this.mobileMenu = document.querySelector(mobileMenu);
         this.navList = document.querySelector(navList);
         this.navLinks = document.querySelectorAll(navLinks);
-        this.activeclass =  "active";
+        this.activeClass = "active";
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this); 
     }
 
-    handleClick(){
+    animateLinks() {
+        this.navLinks.forEach((link) => {
+            link.style.animation 
+                ? (link.style.animation = "")
+                : (link.style.animation = `navLinkFade 0.5s ease forwards 0.3s`);
+        });
+    }
+    
+
+    handleClick() {
         this.navList.classList.toggle(this.activeClass);
+        this.animateLinks();
     }
 
-    addclickEvent () {
+    addclickEvent() {
         this.mobileMenu.addEventListener("click", this.handleClick);
     }
 
-    init () {
+    init() {
         if (this.mobileMenu) {
-            this.addclickEvent ();
+            this.addclickEvent();
         }
         return this;
     }
 }
 
 const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
+    '.mobile-menu',
+    '.nav-list',
+    '.nav-list li',
 );
 mobileNavbar.init();
