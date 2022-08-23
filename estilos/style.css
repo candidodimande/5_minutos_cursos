@@ -68,6 +68,7 @@ nav {
     height: 1px; 
     background-color: rgba(0, 0, 0, 0.473);
     margin: 8px; 
+    transition: 0.3s;
 }
 
 header {
@@ -162,10 +163,19 @@ footer p {
     font-weight: normal;
 }
 
+ul.dropdown {
+    display: none;
+    list-style-type: none;
+    margin-left: 0%;
+}
+
+li.arrow-down:hover ul.dropdown {
+    display: block;
+}
 
 @media (max-width: 999px) {
 
-    body {
+    html, body {
         overflow-x: hidden;
     }
     .nav-list {
@@ -227,6 +237,8 @@ footer p {
     .logo {
         width: 70px;
     }
+
+    
 }
 
 
@@ -243,5 +255,17 @@ footer p {
         opacity: 2;
         transform: translateX(0);
     }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
 }
  
