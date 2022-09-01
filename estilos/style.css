@@ -33,6 +33,7 @@ a:hover {
    
 }
 
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -72,9 +73,10 @@ nav {
 }
 
 header {
-    height: 40vh;
+    height: 60vh;
+    
     background-color: #fff;
-    margin-bottom: 20px;
+    
 }
 
 header p {
@@ -236,6 +238,10 @@ li.arrow-down:hover ul.dropdown {
 
     .logo {
         width: 70px;
+    }
+
+    .meek {
+       height: 170px;
     }
 
     
